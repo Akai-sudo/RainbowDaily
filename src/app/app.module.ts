@@ -9,7 +9,10 @@ import { AppComponent } from './app.component';
 import { OgrodjeComponent } from './ogrodje/ogrodje.component';
 import { MainPageComponent } from './main-page/main-page.component';
 
+import { AgmCoreModule } from '@agm/core'; 
+
 @NgModule({
+  
   declarations: [
     AppComponent,
     OgrodjeComponent,
@@ -19,9 +22,16 @@ import { MainPageComponent } from './main-page/main-page.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    AgmCoreModule.forRoot({  
+      apiKey: 'AIzaSyCPu-HmyWMAm-o_KA3gGuAoW6-w6dRZYwM',
+      libraries: ['places']  
+    })
   ],
   providers: [],
   bootstrap: [OgrodjeComponent]
 })
-export class AppModule { }
+ 
+
+export class AppModule {
+ }
